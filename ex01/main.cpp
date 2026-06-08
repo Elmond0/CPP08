@@ -5,7 +5,7 @@
 
 int main(void)
 {
-	// the example from the subject
+	std::cout << "sub----------------------" << std::endl;
 	{
 		Span sp = Span(5);
 		sp.addNumber(6);
@@ -17,9 +17,8 @@ int main(void)
 		std::cout << sp.longestSpan() << std::endl;
 	}
 
-	std::cout << "----------------------" << std::endl;
+	std::cout << "exep----------------------" << std::endl;
 
-	// adding too many numbers should throw
 	{
 		Span sp(2);
 		sp.addNumber(1);
@@ -34,7 +33,6 @@ int main(void)
 		}
 	}
 
-	// asking for a span with not enough numbers
 	{
 		Span sp(5);
 		sp.addNumber(42);
@@ -48,9 +46,8 @@ int main(void)
 		}
 	}
 
-	std::cout << "----------------------" << std::endl;
+	std::cout << "ran----------------------" << std::endl;
 
-	// filling with a range of iterators
 	{
 		std::vector<int> source;
 		source.push_back(5);
@@ -64,9 +61,8 @@ int main(void)
 		std::cout << "longest:  " << sp.longestSpan() << std::endl;
 	}
 
-	std::cout << "----------------------" << std::endl;
+	std::cout << "alot----------------------" << std::endl;
 
-	// stress test with a lot of numbers
 	{
 		const unsigned int N = 10000;
 		Span sp(N);

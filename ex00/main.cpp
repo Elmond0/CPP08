@@ -1,7 +1,4 @@
 #include "easyfind.hpp"
-#include <iostream>
-#include <vector>
-#include <list>
 
 int main(void)
 {
@@ -9,7 +6,6 @@ int main(void)
 	for (int i = 0; i < 10; i++)
 		vec.push_back(i * 2); // 0 2 4 6 8 ...
 
-	// found case
 	try
 	{
 		std::vector<int>::iterator it = easyfind(vec, 8);
@@ -20,8 +16,6 @@ int main(void)
 	{
 		std::cout << "error: " << e.what() << std::endl;
 	}
-
-	// not found case
 	try
 	{
 		easyfind(vec, 7);
@@ -31,8 +25,6 @@ int main(void)
 	{
 		std::cout << "error: " << e.what() << std::endl;
 	}
-
-	// works on a list too
 	std::list<int> lst;
 	lst.push_back(42);
 	lst.push_back(21);
@@ -46,6 +38,5 @@ int main(void)
 	{
 		std::cout << "error: " << e.what() << std::endl;
 	}
-
 	return 0;
 }

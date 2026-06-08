@@ -1,24 +1,18 @@
-NAME	= easyfind
+NAME = easyFind
 
-CXX		= c++
-CXXFLAGS= -Wall -Wextra -Werror -std=c++98
+CXX = c++
 
-SRCS	= main.cpp
-OBJS	= $(SRCS:.cpp=.o)
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-all: $(NAME)
+SRC = main.cpp
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
-
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+all:
+	@$(CXX) $(CXXFLAGS) $(SRC) -o $(NAME) && echo "\033[32m$(NAME) created.\033[0m"
 
 clean:
-	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME) && echo "\033[31m$(NAME) wiped.\033[0m"
 
 re: fclean all
 

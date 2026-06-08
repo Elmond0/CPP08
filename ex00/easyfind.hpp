@@ -1,12 +1,12 @@
 #ifndef EASYFIND_HPP
 # define EASYFIND_HPP
 
-# include <algorithm>
-# include <stdexcept>
+#include <algorithm>
+#include <stdexcept>
+#include <iostream>
+#include <vector>
+#include <list>
 
-// Looks for the first occurrence of "value" inside the container "container".
-// On success returns an iterator to the found element.
-// If nothing is found we throw, the same way at() would complain.
 template <typename T>
 typename T::iterator easyfind(T& container, int value)
 {

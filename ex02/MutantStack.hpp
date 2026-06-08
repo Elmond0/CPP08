@@ -1,6 +1,8 @@
 #ifndef MUTANTSTACK_HPP
 # define MUTANTSTACK_HPP
 
+# include <iostream>
+# include <list>
 # include <stack>
 # include <deque>
 
