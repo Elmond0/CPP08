@@ -17,8 +17,11 @@ int main(void)
 
 		MutantStack<int>::iterator it = mstack.begin();
 		MutantStack<int>::iterator ite = mstack.end();
+		std::cout << std::endl << *it << std::endl;
 		++it;
+		std::cout << "++it" << std::endl << *it << std::endl;
 		--it;
+		std::cout << "--it" << std::endl << *it << std::endl;
 		std::cout << std::endl << "Print all stack:" << std::endl;
 		while (it != ite)
 		{
@@ -30,21 +33,24 @@ int main(void)
 
 	std::cout << "=== std::list ===" << std::endl;
 	{
-		std::list<int> mstack;
-		mstack.push_back(5);
-		mstack.push_back(17);
-		std::cout << "Last in:	" << mstack.back() << std::endl;
-		mstack.pop_back();
-		std::cout << "Size:		"<< mstack.size() << std::endl;
-		mstack.push_back(3);
-		mstack.push_back(5);
-		mstack.push_back(737);
-		mstack.push_back(0);
+		std::list<int> lstack;
+		lstack.push_back(5);
+		lstack.push_back(17);
+		std::cout << "Last in:	" << lstack.back() << std::endl;
+		lstack.pop_back();
+		std::cout << "Size:		"<< lstack.size() << std::endl;
+		lstack.push_back(3);
+		lstack.push_back(5);
+		lstack.push_back(737);
+		lstack.push_back(0);
 
-		std::list<int>::iterator it = mstack.begin();
-		std::list<int>::iterator ite = mstack.end();
+		std::list<int>::iterator it = lstack.begin();
+		std::list<int>::iterator ite = lstack.end();
+		std::cout << std::endl << *it << std::endl;
 		++it;
+		std::cout << "++it" << std::endl << *it << std::endl;
 		--it;
+		std::cout << "--it" << std::endl << *it << std::endl;
 		std::cout << std::endl << "Print all stack:" << std::endl;
 		while (it != ite)
 		{

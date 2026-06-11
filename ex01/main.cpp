@@ -32,7 +32,6 @@ int main(void)
 			std::cout << "caught: " << e.what() << std::endl;
 		}
 	}
-
 	{
 		Span sp(5);
 		sp.addNumber(42);
