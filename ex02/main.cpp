@@ -7,9 +7,9 @@ int main(void)
 		MutantStack<int> mstack;
 		mstack.push(5);
 		mstack.push(17);
-		std::cout << mstack.top() << std::endl;
-		mstack.pop();
-		std::cout << mstack.size() << std::endl;
+        std::cout << "Last in:	" << mstack.top() << std::endl;
+        mstack.pop();
+		std::cout << "Size:		" << mstack.size() << std::endl;
 		mstack.push(3);
 		mstack.push(5);
 		mstack.push(737);
@@ -19,6 +19,7 @@ int main(void)
 		MutantStack<int>::iterator ite = mstack.end();
 		++it;
 		--it;
+		std::cout << std::endl << "Print all stack:" << std::endl;
 		while (it != ite)
 		{
 			std::cout << *it << std::endl;
@@ -27,15 +28,14 @@ int main(void)
 		std::stack<int> s(mstack);
 	}
 
-	// same operations on a std::list should give the same output
 	std::cout << "=== std::list ===" << std::endl;
 	{
 		std::list<int> mstack;
 		mstack.push_back(5);
 		mstack.push_back(17);
-		std::cout << mstack.back() << std::endl;
+		std::cout << "Last in:	" << mstack.back() << std::endl;
 		mstack.pop_back();
-		std::cout << mstack.size() << std::endl;
+		std::cout << "Size:		"<< mstack.size() << std::endl;
 		mstack.push_back(3);
 		mstack.push_back(5);
 		mstack.push_back(737);
@@ -45,24 +45,12 @@ int main(void)
 		std::list<int>::iterator ite = mstack.end();
 		++it;
 		--it;
+		std::cout << std::endl << "Print all stack:" << std::endl;
 		while (it != ite)
 		{
 			std::cout << *it << std::endl;
 			++it;
 		}
-	}
-
-	// quick check that the const and reverse iterators work too
-	std::cout << "=== reverse ===" << std::endl;
-	{
-		MutantStack<int> mstack;
-		for (int i = 0; i < 5; ++i)
-			mstack.push(i);
-
-		MutantStack<int>::reverse_iterator it = mstack.rbegin();
-		for (; it != mstack.rend(); ++it)
-			std::cout << *it << " ";
-		std::cout << std::endl;
 	}
 
 	return 0;
